@@ -1,3 +1,22 @@
+<?php
+
+// This is a single line comment
+
+/*
+    This is a multiple line comment
+    Line One
+    Line Two
+    Line Three
+*/
+
+echo "Hello World!";
+echo "<br>";
+print "Helo from PHP and Print";
+echo "<br>";
+echo "value one", "value two"; // echo statements are the only printlike statements to have a comma.
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
