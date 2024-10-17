@@ -1,5 +1,11 @@
 <?php
 
+$numbers = [1, 2, 3, 4, 6, 7, 5, 4];
+
+$output = array_sum($numbers);
+
+$amount = count($numbers);
+
 /*
   Challenge 1: Sum of an array
   
@@ -9,6 +15,7 @@
   5. Print out 'The sum of the {amount} numbers is: {sum} '. For example, if the array is [1, 2, 3, 4, 5], the output should be 'The sum of the 5 numbers is: 15'. 
 */
 echo '<h3>Sum Of An Array</h3>';
+echo "The sum of the $amount numbers is $output.";
 
 /*
   Challenge 2: Colors array
@@ -21,9 +28,17 @@ echo '<h3>Sum Of An Array</h3>';
 You should end up with the following array: ['yellow', 'pink', 'blue', 'red', 'purple']
 */
 
-echo '<h3>Colors Array</h3>';
-
 $colors = ['red', 'blue', 'green', 'yellow'];
+$colors = array_reverse($colors);
+array_push($colors, 'purple');
+$colors[] = 'orange';
+array_splice($colors, 1, 1, 'pink');
+array_pop($colors);
+
+
+echo '<h3>Colors Array</h3>';
+print_r($colors);
+
 
 /*
   Challenge 3: Job listings array
@@ -35,3 +50,45 @@ $colors = ['red', 'blue', 'green', 'yellow'];
 */
 
 echo '<h3>Job Listings</h3>';
+
+$listings = [
+  [
+    'id' => '1',
+    'job_title' => 'JavaScript Developer',
+    'company' => 'Acme Corp',
+    'contact_email' => 'james@gmail.com',
+    'contact_phone' => '123-456-7890',
+    'skills' => ['WordPress', 'MySQL', 'Project Management']
+  ],
+  [
+    'id' => '2',
+    'job_title' => 'Web Developer',
+    'company' => 'ABC Corp',
+    'contact_email' => 'john@gmail.com',
+    'contact_phone' => '555-456-7890',
+    'skills' => ['Illustrator', 'Photoshop', 'InDesign']
+  ],
+  [
+    'id' => '3',
+    'job_title' => 'Software Engineer',
+    'company' => '123 Corp',
+    'contact_email' => 'julie@gmail.com',
+    'contact_phone' => '333-456-7890',
+    'skills' => ['Microsoft Word', 'Microsoft Excel', 'Microsoft PowerPoint']
+  ],
+];
+
+array_push($listings, [
+  'id' => '4',
+  'job_title' => 'Graphic Designer',
+  'company' => '123 Corp',
+  'contact_email' => 'suzie@gmail.com',
+  'contact_phone' => '333-456-7890',
+  'skills' => ['Illustrator', 'Photoshop', 'InDesign']
+]);
+
+//print_r($listings);
+
+echo $listings[1]['job_title'];
+echo '<br />';
+echo $listings[2]['skills'][0];
