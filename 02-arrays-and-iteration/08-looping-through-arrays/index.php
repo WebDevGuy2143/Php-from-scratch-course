@@ -1,6 +1,9 @@
 <?php
+// Looping through arrays
 $names = ['John Doe', 'Matthew Thomas', 'Jose Ramirez', 'Mary Jane'];
 
+
+// Storing an array of users in a key/value pair
 $users = [
   ['name' => 'John', 'email' => 'john@email.com'],
   ['name' => 'Jane', 'email' => 'jane@email.com'],
@@ -29,15 +32,46 @@ $users = [
     <div class="bg-white rounded-lg shadow-md p-6 mt-6">
       <!-- Output -->
       <h3 class="text-xl font-semibold mb-4">Using a for loop</h3>
-      <ul class="mb-6"></ul>
+      <ul class="mb-6">
+
+        <!-- Looping through the array for names using a for loop -->
+        <?php for ($i = 0; $i < count($names); $i++): ?>
+          <li><?= $names[$i]; ?></li>
+        <?php endfor; ?>
+      </ul>
       <h3 class="text-xl font-semibold mb-4">Using a foreach loop</h3>
-      <ul class="mb-6"></ul>
+      <ul class="mb-6">
+
+        <!-- Looping through the array for names using a foreach loop -->
+        <?php foreach ($names as $name): ?>
+          <li><?= $name; ?></li>
+        <?php endforeach; ?>
+      </ul>
       <h3 class="text-xl font-semibold mb-4">Using a foreach loop with index</h3>
-      <ul class="mb-6"></ul>
+
+      <!-- Looping through the array for names using a foreach loop with index -->
+      <ul class="mb-6"><?php foreach ($names as $index => $name): ?>
+          <li><?= $index . ': ' . $name; ?></li>
+        <?php endforeach; ?>
+      </ul>
       <h3 class="text-xl font-semibold mb-4">Using a foreach loop with associative array</h3>
-      <ul class="mb-6"></ul>
+      <ul class="mb-6">
+
+        <!-- Looping through the array for users using a foreach loop with associative arrays, displaying name and email -->
+        <?php foreach ($users as $user): ?>
+          <li><?= $user['name'] . ': ' . $user['email'] ?></li>
+        <?php endforeach; ?>
+      </ul>
       <h3 class="text-xl font-semibold mb-4">Getting key names and values from associative array</h3>
-      <ul class="mb-6"></ul>
+      <ul class="mb-6">
+
+        <!-- Looping through the array for users using a foreach loop with associative arrays, displaying name and email -->
+        <?php foreach ($users as $user): ?>
+          <?php foreach ($user as $key => $value): ?>
+            <li><?= $key . ': ' . $value ?></li>
+          <?php endforeach; ?>
+        <?php endforeach; ?>
+      </ul>
     </div>
   </div>
 </body>
