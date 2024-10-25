@@ -1,3 +1,26 @@
+<?php
+// Nested For Loops
+/* for ($i = 0; $i < 5; $i++) {
+  for ($j = 0; $j < 5; $j++) {
+    echo $i . ' - ' . $j . '<br />';
+  }
+} */
+
+// Nested While Loop
+/* $i = 0;
+
+while ($i < 5) {
+  $j = 0;
+
+  while ($j < 5) {
+    echo $i . ' - ' . $j . '<br />';
+    $j++;
+  }
+  $i++;
+} */
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +48,15 @@
 </head>
 
 <body>
+  <!-- Create a grid container and nested for loops to create a grid of 5x5 items -->
   <div class="grid-container">
+    <?php for ($i = 0; $i < 5; $i++) : ?>
+      <?php for ($j = 0; $j < 5; $j++) : ?>
+        <div class="grid-item">
+          <?php echo $i . ' - ' . $j; ?>
+        </div>
+      <?php endfor; ?>
+    <?php endfor; ?>
   </div>
 </body>
 
