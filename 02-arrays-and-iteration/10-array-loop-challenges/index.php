@@ -22,9 +22,13 @@
 */
 echo '<h3>Multiplication Table</h3>';
 
+// Nested for loop
+// loop through 1-10
 for ($i = 1; $i <= 10; $i++) {
-
+  // loop through 1-10
   for ($j = 1; $j <= 10; $j++) {
+
+    // display the multiplication table by itteration of i and j
     echo $i . ' x ' . $j . ' = ' . ($i * $j) . '<br>';
   }
 }
