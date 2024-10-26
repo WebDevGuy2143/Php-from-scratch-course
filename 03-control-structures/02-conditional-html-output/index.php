@@ -1,3 +1,12 @@
+<?php
+
+// Variables storing values of if logged in and name
+$isloggedIn = true;
+$name = 'Gene!';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +25,33 @@
   </header>
   <div class="container mx-auto p-4 mt-4">
     <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+
       <!-- Output -->
-      <h1 class="text-3xl">Welcome</h1>
+
+      <!-- "expanded conditional" or rough version -->
+      <!-- conditional if/else statement checking if $isloggedIn is true or false -->
+      <!-- displaying a different message based on the result -->
+
+      <?php if ($isloggedIn) : ?>
+        <?php if (isset($name)) : ?>
+          <h1 class="text-3xl">Welcome, <?= $name ?></h1>
+        <?php else : ?>
+          <h1 class="text-3xl">Welcome to the app!</h1>
+        <?php endif; ?>
+      <?php else : ?>
+        <h1 class="text-3xl">Please log in to continue...</h1>
+      <?php endif; ?>
+
+      <!-- clearner version of the above code -->
+
+      <?php if ($isloggedIn && $name) : ?>
+        <h1 class="text-3xl">Welcome, <?= $name ?></h1>
+      <?php elseif ($isloggedIn) : ?>
+        <h1 class="text-3xl">Welcome to the app!</h1>
+      <?php else : ?>
+        <h1 class="text-3xl">Please log in to continue...</h1>
+      <?php endif; ?>
+
     </div>
   </div>
 </body>
