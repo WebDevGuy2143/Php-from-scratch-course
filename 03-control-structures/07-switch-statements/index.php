@@ -1,3 +1,44 @@
+<?php
+
+$dayOfWeek = date('l'); // Get the current day of the week
+
+
+// use a switch statement to determine the message and color based on the day of the week
+switch ($dayOfWeek) {
+  case 'Monday':
+    $message = 'Monday blues!';
+    $color = 'blue';
+    break;
+  case 'Tuesday':
+    $message = 'At least it\'s not Monday...';
+    $color = 'green';
+    break;
+  case 'Wednesday':
+    $message = 'Humpday!';
+    $color = 'orange';
+    break;
+  case 'Thursday':
+    $message = 'One more day until the weekend starts!';
+    $color = 'red';
+    break;
+  case 'Friday':
+    $message = 'TGIF!';
+    $color = 'purple';
+    break;
+  case 'Saturday':
+    $message = 'Have a great weekend!';
+    $color = 'yellow';
+    break;
+  case 'Sunday':
+    $message = 'Have a great weekend!';
+    $color = 'magenta';
+    break;
+  default:
+    echo 'Weekend blues!';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +52,10 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: blue;
+      /* Change the bacnkground color based on the day of the week in the switch statement */
       color: white;
+      background-color: <?php echo $color; ?>;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,7 +65,10 @@
 </head>
 
 <body>
-  <h1>Monday blues!</h1>
+
+  <!-- Display the message from the switch statement -->
+  <h1><?php echo $message; ?></h1>
+
 </body>
 
 </html>
