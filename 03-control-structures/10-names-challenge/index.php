@@ -9,4 +9,15 @@ Names Challenge:
 5. Make all names lowercase before printing them.
 */
 
+// srore names in array
 $names = ['Alex', 'Beth', 'Caroline', 'Dave', 'Elanor', 'Anna', 'Freddie', 'Adam'];
+
+
+// loop through names and check if first letter is 'A', if it is, skip it and continue to next iteration
+foreach ($names as $name) {
+    if ($name[0] === 'A') {
+        continue;
+    }
+    // if first letter is not 'A', reverse the string and make it lowercase and line break it
+    echo strtolower(strrev($name)) . '<br>';
+}
