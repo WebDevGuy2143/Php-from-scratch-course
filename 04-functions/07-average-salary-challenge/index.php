@@ -52,6 +52,28 @@ function highlightTags($tags, $searchTerm)
   $tagsArray = implode(', ', $tags);
   return str_replace($searchTerm, "<span class='bg-yellow-200'>$searchTerm</span>", $tagsArray);
 }
+// first solution to calculate average salary using a foreach loop that adds up all of the salaries and divides that total by the number of salaries
+function calculateAverageSalary($listings)
+{
+  $totalSalary = 0;
+  $count = count($listings);
+  foreach ($listings as $listing) {
+    $totalSalary += $listing['salary'];
+  }
+  $averageSalary = ($count > 0) ? $totalSalary / $count : 0;
+  return formatSalary($averageSalary);
+}
+
+// second solution to calculate average salary using array_column which returns an array of values from a specific column of an array. In this case, the column is 'salary'
+function calculateAverageSalary2($listings)
+{
+  $salaries = array_column($listings, 'salary');
+  $totalSalary = array_sum($salaries);
+  $count = count($listings);
+
+  $averageSalary = ($count > 0) ? $totalSalary / $count : 0;
+  return formatSalary($averageSalary);
+}
 ?>
 
 
@@ -73,7 +95,7 @@ function highlightTags($tags, $searchTerm)
   </header>
   <div class="container mx-auto p-4 mt-4">
     <div class="bg-green-100 rounded-lg shadow-md p-6 my-6">
-      <h2 class="text-2xl font-semibold mb-4">Average Salary:</h2>
+      <h2 class="text-2xl font-semibold mb-4">Average Salary: <?= calculateAverageSalary($listings)  ?></h2>
     </div>
     <!-- Output -->
     <?php foreach ($listings as $index => $job) : ?>
