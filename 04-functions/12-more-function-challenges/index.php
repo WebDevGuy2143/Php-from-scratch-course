@@ -54,16 +54,25 @@ echo '<br>';
   3. The output should look like this:
 */
 
+// function to find the longest word
 function findLongestWord($sentence)
 {
+
+  // split the sentence into an array of words
   $words = explode(' ', $sentence);
+
+  // store the longest word in an empty string
   $longestWord = '';
+
+  // loop through the array of words and find the longest word
   foreach ($words as $word) {
     if (strlen($word) > strlen($longestWord) || $longestWord === '') {
       $longestWord = $word;
     }
   }
+  // return the longest word
   return $longestWord;
 }
 
+// call the function to find the longest word
 echo findLongestWord('The quickest brown fox jumped over the lazy dog.') . '<br>'; // quickest
