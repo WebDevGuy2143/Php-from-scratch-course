@@ -1,3 +1,15 @@
+<?php
+
+// Set environment variables
+putenv('DB_HOST=localhost');
+putenv('DB_USER=root');
+
+// Get environment variables
+$host = getenv('DB_HOST');
+$user = getenv('DB_USER');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +27,13 @@
 
       <div class="bg-gray-200 p-4 rounded-lg">
         <strong class="block mb-2">DB Host:</strong>
-
+        <!-- Get environment variable `DB_HOST` -->
+          <?= $host ?>
       </div>
       <div class="bg-gray-200 p-4 rounded-lg">
         <strong class="block mb-2">DB User:</strong>
-
+        <!-- Get environment variable `DB_USER` -->
+          <?= $user ?>
       </div>
 
     </div>
