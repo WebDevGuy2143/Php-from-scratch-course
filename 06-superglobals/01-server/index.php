@@ -1,22 +1,22 @@
 <?php
 // Common server variables:
-$requestMethod = '';
-$serverProtocol = '';
-$serverName = '';
-$serverPort = '';
-$serverSoftware = '';
-$serverAdmin = '';
-$documentRoot = '';
-$scriptFilename = '';
-$scriptName = '';
-$phpSelf = '';
-$remoteAddr = '';
-$connection = '';
-$host = '';
-$referer = '';
-$userAgent = '';
-$queryString = '';
-$requestUri = '';
+$requestMethod  = $_SERVER['REQUEST_METHOD'] ?? ''; // GET, POST, etc. setting to empty string if not set using shorthand operator = ternary operator or colescing operator
+$serverProtocol = $_SERVER['SERVER_PROTOCOL'] ?? ''; // HTTP/1.1
+$serverName = $_SERVER['SERVER_NAME'] ?? ''; // localhost
+$serverPort = $_SERVER['SERVER_PORT'] ?? ''; // 80
+$serverSoftware = $_SERVER['SERVER_SOFTWARE'] ?? ''; // Apache/2.4.65 (Win64) PHP/8.2.4
+$serverAdmin = $_SERVER['SERVER_ADMIN'] ?? ''; // 
+$documentRoot = $_SERVER['DOCUMENT_ROOT'] ?? ''; // C:\xampp\htdocs\php-basics\06-superglobals\01-server
+$scriptFilename = $_SERVER['SCRIPT_FILENAME'] ?? ''; // C:\xampp\htdocs\php-basics\06-superglobals\01-server\index.php
+$scriptName = $_SERVER['SCRIPT_NAME'] ?? ''; // /php-basics/06-superglobals/01-server/index.php
+$phpSelf = $_SERVER['PHP_SELF'] ?? ''; // /php-basics/06-superglobals/01-server/index.php
+$remoteAddr = $_SERVER['REMOTE_ADDR'] ?? ''; // 127.0.0.1
+$connection = $_SERVER['HTTP_CONNECTION'] ?? ''; // keep-alive
+$host = $_SERVER['HTTP_HOST'] ?? ''; // localhost
+$referer = $_SERVER['HTTP_REFERER'] ?? ''; // http://localhost/php-basics/06-superglobals/01-server/index.php
+$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? ''; // Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/237.84.2.178 Safari/537.36
+$queryString = $_SERVER['QUERY_STRING'] ?? ''; // name=John
+$requestUri = $_SERVER['REQUEST_URI'] ?? ''; // /php-basics/06-superglobals/01-server/index.php
 
 ?>
 
